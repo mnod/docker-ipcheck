@@ -7,6 +7,7 @@ if ( $headeraddr == "" ) {
 else {
   $ipaddr = $headeraddr;
 }
-$json_array = [ 'ipaddress' => "$ipaddr" ];
+$hostbyaddr = gethostbyaddr($ipaddr);
+$json_array = [ 'ipaddress' => "$ipaddr", 'hostname' => "$hostbyaddr" ];
 echo json_encode($json_array);
 ?>
